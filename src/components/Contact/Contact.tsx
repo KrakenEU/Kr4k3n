@@ -11,6 +11,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e: any) => {
     setFormData({
@@ -22,11 +23,38 @@ const Contact = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSuccessMessage('');
 
-    setTimeout(() => {
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('company', formData.company);
+    formDataToSend.append('subject', formData.subject);
+    formDataToSend.append('message', formData.message);
+    formDataToSend.append('_subject', 'New Contact from CyberSec Portfolio');
+    formDataToSend.append('_autoresponse', "Thank you for your message! I'll get back to you within 24 hours.");
+    formDataToSend.append('_template', 'table');
+
+    try {
+      const response = await fetch('https://formsubmit.co/tornosportugal@gmail.com', {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      if (response.ok) {
+        setSuccessMessage('✅ Your message has been sent!');
+        setFormData({ name: '', email: '', subject: '', message: '', company: '' });
+      } else {
+        setSuccessMessage('❌ There was an error sending your message.');
+      }
+    } catch (error) {
+      console.error(error);
+      setSuccessMessage('❌ There was an error sending your message.');
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
+
 
   return (
     <div className="contact-container">
@@ -100,7 +128,7 @@ const Contact = () => {
           </div>
 
           <form 
-            action="https://formsubmit.co/tornosportugal@gmail.com" 
+            action="https://formsubmit.co/efe3516b687e7af1e32aae6fbca0b140" 
             method="POST"
             className="contact-form"
             onSubmit={handleSubmit}
@@ -202,7 +230,6 @@ const Contact = () => {
             </div>
 
             <div className="form-footer">
-              
               <button 
                 type="submit" 
                 className="submit-btn"
@@ -221,6 +248,12 @@ const Contact = () => {
                 )}
               </button>
             </div>
+
+            {successMessage && (
+              <p className="success-message" style={{ marginTop: '1rem', textAlign: 'center' }}>
+                {successMessage}
+              </p>
+            )}
           </form>
         </div>
       </div>
