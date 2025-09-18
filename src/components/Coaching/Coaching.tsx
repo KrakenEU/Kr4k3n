@@ -1,7 +1,12 @@
-import { useState } from 'react';
 import './Coaching.css';
 
 const Coaching = () => {
+    return (
+        <div className='coaching-container'> Coaching is not available right now, dont hesitate to make contact if you have any explicit doubts</div>
+    )
+}
+{ /*
+const CoachingPublic = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('english');
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -368,7 +373,7 @@ const Coaching = () => {
     
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/tornosportugal@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/efe3516b687e7af1e32aae6fbca0b140', {
         headers: { "Accept": "application/json" },
         method: 'POST',
         body: formDataToSend
@@ -399,7 +404,7 @@ const Coaching = () => {
 
   return (
     <div className="coaching-container">
-      {/* Header Section */}
+
       <div className="coaching-header">
         <div className="terminal-prompt">
           <span className="prompt-symbol">root@mentorship:~$</span>
@@ -413,7 +418,7 @@ const Coaching = () => {
         </p>
       </div>
 
-      {/* Language Selection */}
+
       <div className="language-selector">
         <h3>
           <i className="fas fa-globe"></i> {t.chooseLanguage}
@@ -434,7 +439,7 @@ const Coaching = () => {
         </div>
       </div>
 
-      {/* Services Grid */}
+
       <section className="services-section">
         <h2 className="section-title">
           <span className="prompt">root@services:~$</span>
@@ -480,7 +485,7 @@ const Coaching = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+
       <section className="process-section">
         <h2 className="section-title">
           <span className="prompt">root@process:~$</span>
@@ -499,7 +504,7 @@ const Coaching = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+
       <section className="testimonials-section">
         <h2 className="section-title">
           <span className="prompt">root@feedback:~$</span>
@@ -525,7 +530,7 @@ const Coaching = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+ 
       <section className="cta-section">
         <div className="cta-content">
           <h2>{t.ctaTitle}</h2>
@@ -539,7 +544,7 @@ const Coaching = () => {
         </div>
       </section>
 
-      {/* Coaching Form Modal */}
+
       {showForm && (
         <div className="form-overlay" onClick={() => setShowForm(false)}>
           <div className="coaching-form-container" onClick={(e) => e.stopPropagation()}>
@@ -557,7 +562,7 @@ const Coaching = () => {
               className="coaching-form"
               onSubmit={handleSubmit}
             >
-              {/* FormSubmit configuration fields */}
+
               <input type="hidden" name="_subject" value="New 1:1 Coaching Request - CyberSec Portfolio" />
               <input 
                 type="hidden" 
@@ -743,5 +748,5 @@ const Coaching = () => {
     </div>
   );
 };
-
+*/}
 export default Coaching;

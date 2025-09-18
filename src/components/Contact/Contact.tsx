@@ -36,7 +36,7 @@ const Contact = () => {
     formDataToSend.append('_template', 'table');
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/tornosportugal@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/efe3516b687e7af1e32aae6fbca0b140', {
         method: 'POST',
         headers: { "Accept": "application/json" },
         body: formDataToSend
@@ -129,7 +129,7 @@ const Contact = () => {
           </div>
 
           <form 
-            action="https://formsubmit.co/efe3516b687e7af1e32aae6fbca0b140" 
+            action="https://formsubmit.co/ajax/efe3516b687e7af1e32aae6fbca0b140" 
             method="POST"
             className="contact-form"
             onSubmit={handleSubmit}
