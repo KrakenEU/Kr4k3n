@@ -36,8 +36,9 @@ const Contact = () => {
     formDataToSend.append('_template', 'table');
 
     try {
-      const response = await fetch('https://formsubmit.co/tornosportugal@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/tornosportugal@gmail.com', {
         method: 'POST',
+        headers: { "Accept": "application/json" },
         body: formDataToSend
       });
 

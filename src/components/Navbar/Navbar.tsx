@@ -25,6 +25,9 @@ const Navbar = () => {
             <Link to="/Kr4k3n/about">~/about</Link>
           </li>
           <li>
+            <Link to="/Kr4k3n/coaching">~/coaching</Link>
+          </li>
+          <li>
             <Link to="/Kr4k3n/blog">~/blog</Link>
           </li>
           <li>
